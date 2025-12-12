@@ -32,7 +32,7 @@ const todoslospersonajes = [
         nombre: "Le'garde", 
         gifidleJ1: './resources/character_animation/legarde/idle_legarde.gif',
         gifataqueJ1: './resources/character_animation/legarde/attack_legarde.gif',
-        imagenJ2: './resources/enemys/PvP/Legarde.png',
+        imagenJ2: './resources/enemys/PvP/legarde.png',
         caritamenu: './resources/ingame_characters/legarde_ingame.png',
         color: '#9B8365'
     },
