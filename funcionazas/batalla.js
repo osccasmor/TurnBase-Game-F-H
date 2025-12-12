@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (botonVolver) {
         botonVolver.addEventListener('click', () => {
             if (confirm('¿Volver al menú principal? Se perderá el progreso de la batalla.')) {
-                window.location.href = '.././index.html';
+                window.location.href = './index.html';
             }
         });
     }
