@@ -3,46 +3,46 @@ const todoslospersonajes = [
     { 
         id: 0, 
         nombre: 'Cahara', 
-        gifidleJ1: '../resources/character_animation/cahara/idle_cahara.gif',
-        gifataqueJ1: '../resources/character_animation/cahara/attack_cahara.gif',
-        imagenJ2: '../resources/enemys/PvP/cahara.png',
-        caritamenu: '../resources/ingame_characters/cahara_ingame.png',
+        gifidleJ1: './resources/character_animation/cahara/idle_cahara.gif',
+        gifataqueJ1: './resources/character_animation/cahara/attack_cahara.gif',
+        imagenJ2: './resources/enemys/PvP/cahara.png',
+        caritamenu: './resources/ingame_characters/cahara_ingame.png',
         color: '#8B7355'
     },
     { 
         id: 1, 
         nombre: "D'arce", 
-        gifidleJ1: '../resources/character_animation/dearce/idle_dearce.gif',
-        gifataqueJ1: '../resources/character_animation/dearce/attack_dearce.gif',
-        imagenJ2: '../resources/enemys/PvP/dearce.png',
-        caritamenu: '../resources/ingame_characters/dearce_ingame.png',
+        gifidleJ1: './resources/character_animation/dearce/idle_dearce.gif',
+        gifataqueJ1: './resources/character_animation/dearce/attack_dearce.gif',
+        imagenJ2: './resources/enemys/PvP/dearce.png',
+        caritamenu: './resources/ingame_characters/dearce_ingame.png',
         color: '#A08060'
     },
     { 
         id: 2, 
         nombre: 'Enki', 
-        gifidleJ1: '../resources/character_animation/enki/idle_enki.gif',
-        gifataqueJ1: '../resources/character_animation/enki/attack_enki.gif',
-        imagenJ2: '../resources/enemys/PvP/enki.png',
-        caritamenu: '../resources/ingame_characters/enki_ingame.png',
+        gifidleJ1: './resources/character_animation/enki/idle_enki.gif',
+        gifataqueJ1: './resources/character_animation/enki/attack_enki.gif',
+        imagenJ2: './resources/enemys/PvP/enki.png',
+        caritamenu: './resources/ingame_characters/enki_ingame.png',
         color: '#6B5344'
     },
     { 
         id: 3, 
         nombre: "Le'garde", 
-        gifidleJ1: '../resources/character_animation/legarde/idle_legarde.gif',
-        gifataqueJ1: '../resources/character_animation/legarde/attack_legarde.gif',
-        imagenJ2: '../resources/enemys/PvP/legarde.png',
-        caritamenu: '../resources/ingame_characters/legarde_ingame.png',
+        gifidleJ1: './resources/character_animation/legarde/idle_legarde.gif',
+        gifataqueJ1: './resources/character_animation/legarde/attack_legarde.gif',
+        imagenJ2: './resources/enemys/PvP/legarde.png',
+        caritamenu: './resources/ingame_characters/legarde_ingame.png',
         color: '#9B8365'
     },
     { 
         id: 4, 
         nombre: 'Ragnvaldr', 
-        gifidleJ1: '../resources/character_animation/ragnvaldr/idle_ragnvaldr.gif',
-        gifataqueJ1: '../resources/character_animation/ragnvaldr/attack_ragnvaldr.gif',
-        imagenJ2: '../resources/enemys/PvP/outlander.png',
-        caritamenu: '../resources/ingame_characters/ragnvaldr_ingame.png',
+        gifidleJ1: './resources/character_animation/ragnvaldr/idle_ragnvaldr.gif',
+        gifataqueJ1: './resources/character_animation/ragnvaldr/attack_ragnvaldr.gif',
+        imagenJ2: './resources/enemys/PvP/outlander.png',
+        caritamenu: './resources/ingame_characters/ragnvaldr_ingame.png',
         color: '#7B6355'
     }
 ];
