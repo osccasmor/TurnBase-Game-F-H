@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #d1c7b7;
+    background-image: url('.././resources/background/FearHunger1.png');
+    background-size: cover; /* Cubre toda la pantalla */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fijo al hacer scroll */
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginaentera {
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulacillo {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.titulacillo h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #8b0000;
+    text-shadow: 0 0 15px rgba(139, 0, 0, 0.8), 3px 3px 6px rgba(0, 0, 0, 0.9);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 0 30px;
+}
+
+.titulacillo h1::before,
+.titulacillo h1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #8b0000);
+}
+
+.titulacillo h1::before {
+    left: -160px;
+}
+
+.titulacillo h1::after {
+    right: -160px;
+    background: linear-gradient(90deg, #8b0000, transparent);
+}
+
+.botonesarriba {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    background-color: rgba(20, 10, 10, 0.7);
+    padding: 15px 40px;
+    border-radius: 10px;
+    border: 2px solid #3a0a0a;
+}
+
+.botonsuperior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    min-width: 120px;
+    background-color: rgba(30, 15, 15, 0.8);
+    border: 2px solid transparent;
+}
+
+.botonsuperior:hover {
+    background-color: rgba(50, 15, 15, 0.9);
+    border-color: #5a0a0a;
+}
+
+.botonsuperior.activo {
+    background-color: rgba(90, 10, 10, 0.9);
+    border-color: #8b0000;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+}
+
+.numerogrande {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #d1c7b7;
+    line-height: 1;
+}
+
+.textopequeno {
+    font-size: 1.2rem;
+    color: #a09080;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.textogrande {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #d1c7b7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.separatejoe {
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #5a0a0a, transparent);
+}
+
+.pedazo_cajotedelmenu {
+    background-color: rgba(10, 5, 5, 0.75);
+    border: 3px solid #3a0a0a;
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 0 30px rgba(90, 10, 10, 0.4);
+}
+
+.titulocajon {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #8b0000;
+    text-shadow: 0 0 8px rgba(139, 0, 0, 0.6);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.personajescontodo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.personajeguapo {
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 182px;
+    height: 360px;
+    flex-shrink: 0;
+}
+
+.personajeguapo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+}
+
+.fotodepersonaje {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.bordepersonaje {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.personajeguapo:hover .bordepersonaje {
+    border-color: #8b0000;
+}
+
+.personajeguapo.seleccionado .bordepersonaje {
+    border-color: #ff0000 !important;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.marcadordeseleccion {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(139, 0, 0, 0.9);
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+.personajeguapo.seleccionado .marcadordeseleccion {
+    display: flex;
+}
+
+.nombrepersonaje {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(20, 10, 10, 0.95), transparent);
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #d1c7b7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.contadormagico {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.4rem;
+    color: #d1c7b7;
+    letter-spacing: 1px;
+}
+
+.contadormagico span {
+    color: #8b0000;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-shadow: 0 0 8px rgba(139, 0, 0, 0.6);
+}
+
+.botonesfinales {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.botonazos {
+    background-color: #1a0a0a;
+    color: #d1c7b7;
+    border: 3px solid #5a0a0a;
+    padding: 20px 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    min-width: 250px;
+}
+
+.botonazos:hover {
+    background-color: #5a0a0a;
+    border-color: #8b0000;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+.botonazos:active {
+    transform: translateY(0);
+}
+
+.botonazos:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.botonazos:disabled:hover {
+    background-color: #1a0a0a;
+    border-color: #5a0a0a;
+    color: #d1c7b7;
+    box-shadow: none;
+}
+
+.mensajeimportante {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(90, 10, 10, 0.3);
+    border-radius: 8px;
+    border: 2px solid #5a0a0a;
+    display: none;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.mensajeimportante.activo {
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    .personajescontodo {
+        gap: 15px;
+    }
+    
+    .personajeguapo {
+        width: 160px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 900px) {
+    .titulacillo h1 {
+        font-size: 3rem;
+    }
+    
+    .titulacillo h1::before,
+    .titulacillo h1::after {
+        width: 80px;
+    }
+    
+    .titulacillo h1::before {
+        left: -90px;
+    }
+    
+    .titulacillo h1::after {
+        right: -90px;
+    }
+    
+    .personajescontodo {
+        gap: 10px;
+    }
+    
+    .personajeguapo {
+        width: 140px;
+        height: 280px;
+    }
+    
+    .botonazos {
+        padding: 15px 30px;
+        min-width: 200px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .botonesarriba {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    /* CORREGIR: Cambiar 'separadorvertical' por 'separatejoe' */
+    .separatejoe {
+        width: 80%;
+        height: 3px;
+        background: linear-gradient(to right, transparent, #5a0a0a, transparent);
+    }
+    
+    .personajescontodo {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .personajeguapo {
+        width: 182px;
+        height: 360px;
+    }
+    
+    .botonesfinales {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .botonazos {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* ===== ESTILOS PARA MODO PvP ===== */
+
+/* Contenedor del botón del jugador 2 */
+.dondevaerboton {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: aparecer 0.5s;
+    display: none;
+}
+
+.butonazojugador2 {
+    background: linear-gradient(to bottom, #1a1a5a, #0a0a3a);
+    color: #b0c4de;
+    border: 3px solid #2a5a8b;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    min-width: 300px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.butonazojugador2:hover {
+    background: linear-gradient(to bottom, #2a5a8b, #1a3a6b);
+    border-color: #4a9ade;
+    box-shadow: 
+        0 10px 25px rgba(42, 90, 139, 0.6),
+        0 0 30px rgba(42, 90, 139, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.butonazojugador2:active {
+    transform: translateY(0);
+}
+
+/* Marca de selección del jugador 2 */
+.marcadordeseleccionjugador2 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(42, 90, 139, 0.9);
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px solid #4a9ade;
+    box-shadow: 0 0 10px rgba(74, 154, 222, 0.7);
+    z-index: 5;
+}
+
+.personajeguapo.seleccionadojugador2 .marcadordeseleccionjugador2 {
+    display: flex;
+}
+
+/* Estados para el modo PvP */
+.personajescontodo.modojugador2 .personajeguapo:hover .bordepersonaje {
+    border-color: #2a5a8b !important;
+}
+
+.personajescontodo.modojugador2 .personajeguapo.seleccionadojugador2 .bordepersonaje {
+    border-color: #4a9ade !important;
+    box-shadow: 
+        0 0 20px rgba(74, 154, 222, 0.8),
+        inset 0 0 20px rgba(74, 154, 222, 0.3);
+}
+
+/* Texto del contador para modo PvP */
+#textocontador.modojugador2 {
+    color: #b0c4de;
+}
+
+#textocontador.modojugador2::before {
+    content: "Jugador 2 - ";
+    color: #4a9ade;
+    font-weight: bold;
+}
+
+/* Animación de aparición */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para caritas de personajes muertos */
+.caritapersonajs.muerto {
+    opacity: 0.6;
+    border-color: #333 !important;
+    background-color: rgba(30, 30, 30, 0.9) !important;
+}
+
+.caritapersonajs.muerto:hover {
+    border-color: #555 !important;
+    transform: none !important;
+    cursor: not-allowed;
+}

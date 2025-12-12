@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    background-image: url('.././resources/background/FearHunger1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #d1c7b7;
+}
+
+/* ===== CONTENEDOR PRINCIPAL DE BATALLA ===== */
+.labatalla {
+    position: relative;
+    width: 100%;
+    max-width: 896px;
+    aspect-ratio: 4/3;
+    background-color: rgba(20, 10, 10, 0.85);
+    border: 3px solid #5a0a0a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(90, 10, 10, 0.4);
+    background-image: url('.././resources/background/courtyard.png');
+}
+
+/* ===== SELECTOR DE PERSONAJES ===== */
+.paseleccionarperso1, .paseleccionarperso2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.paseleccionarperso1 {
+    bottom: 2rem;
+    left: 3rem;
+}
+
+.paseleccionarperso2 {
+    top: 2rem;
+    right: 3rem;
+}
+
+.caritapersonajs {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(60, 30, 30, 0.9);
+    border: 2px solid #8b0000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #d1c7b7;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.caritapersonajs:hover {
+    border-color: #ff0000;
+    background-color: rgba(90, 30, 30, 0.9);
+    transform: scale(1.05);
+}
+
+.caritapersonajs.selected {
+    border-color: #ff3333;
+    background-color: rgba(139, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+/* ===== CONTENEDOR DE CARITAS ===== */
+.aquivanlascaritas1, .aquivanlascaritas2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 25px;
+}
+
+/* ===== PERSONAJES EN BATALLA ===== */
+.elpavo1, .elpavo2 {
+    position: absolute;
+    width: 7rem;
+    height: 9rem;
+    background-color: rgba(40, 20, 20, 0.8);
+    border: 3px solid #8b0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d1c7b7;
+    font-size: 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.elpavo1 {
+    bottom: 3rem;
+    left: 10rem;
+    width: 150px;
+    height: 200px;
+    margin-bottom: 25px;
+}
+
+.elpavo2 {
+    top: 4rem;
+    right: 28%;
+    width: 150px;
+    height: 200px;
+    font-size: 4rem;
+}
+
+/* Estilos para imágenes dentro de los sprites */
+.elpavo1 img, .elpavo2 img {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== BARRAS DE VIDA ===== */
+.barritadevida1, .barritadevida2 {
+    position: absolute;
+    width: 24rem;
+    height: 1.8rem;
+}
+
+.barritadevida1 {
+    bottom: 4rem;
+    right: 4rem;
+}
+
+.barritadevida2 {
+    top: 2rem;
+    left: 1rem;
+}
+
+.aquivalabarra {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 15, 15, 0.9);
+    border: 2px solid #5a0a0a;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.vidajugador1, .vidajugador2 {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.vidajugador1 {
+    background: linear-gradient(to right, #ff0000, #cc0000, #990000);
+}
+
+.vidajugador2 {
+    background: linear-gradient(to right, #2a5a8b, #1a3a6b, #0a1a3a);
+}
+
+/* ===== TEXTO DE TURNO ===== */
+.erturno {
+    position: absolute;
+    top: calc(50% - 80px);
+    left: 15%;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.9),
+        0 0 10px rgba(139, 0, 0, 0.8);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#turnodeahora {
+    color: #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.9);
+}
+
+/* ===== BOTÓN DE ATAQUE ===== */
+.botonataco {
+    position: absolute;
+    right: 8rem;
+    bottom: 6rem;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(to bottom, #8b0000, #5a0a0a, #3a0a0a);
+    border: 3px solid #ff0000;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    box-shadow: 
+        0 5px 20px rgba(139, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.botonataco:hover {
+    background: linear-gradient(to bottom, #ff0000, #8b0000, #5a0a0a);
+    border-color: #ff3333;
+    box-shadow: 
+        0 10px 30px rgba(255, 0, 0, 0.8),
+        0 0 40px rgba(255, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.botonataco:active {
+    transform: translateY(0);
+}
+
+/* ===== BOTONES ADICIONALES ===== */
+.botones-adicionales {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.boton-secundario {
+    padding: 0.5rem 1rem;
+    background: #5a0a0a;
+    color: white;
+    border: 1px solid #8b0000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.boton-secundario:hover {
+    background: #8b0000;
+    border-color: #ff0000;
+}
+
+#botonVolver {
+    background: #444;
+    border-color: #666;
+}
+
+#botonVolver:hover {
+    background: #666;
+    border-color: #888;
+}
+
+/* ===== AJUSTES PARA CARITAS CON IMÁGENES ===== */
+.caritapersonajs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* ===== ESTILOS PARA PERSONAJES MUERTOS ===== */
+.caritapersonajs.muerto {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+.caritapersonajs.muerto img {
+    filter: grayscale(100%) brightness(0.5);
+}
+
+.caritapersonajs.muerto:hover {
+    transform: none !important;
+    border-color: #666 !important;
+}
+
+/* Indicador visual en barras de vida cuando está muerto */
+.vidajugador1[style*="width: 0%"],
+.vidajugador2[style*="width: 0%"] {
+    background: linear-gradient(to right, #666, #444, #222) !important;
+    color: #999 !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .labatalla {
+        max-width: 95%;
+        aspect-ratio: auto;
+        height: auto;
+        min-height: 600px;
+    }
+    
+    .elpavo1 {
+        left: 8rem;
+        bottom: 2.5rem;
+    }
+    
+    .elpavo2 {
+        right: 25%;
+        top: 3.5rem;
+    }
+    
+    .barritadevida1, .barritadevida2 {
+        width: 18rem;
+    }
+    
+    .botonataco {
+        right: 6rem;
+        bottom: 5rem;
+        padding: 0.8rem 2rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .paseleccionarperso1 {
+        left: 1.5rem;
+        bottom: 1.5rem;
+    }
+    
+    .paseleccionarperso2 {
+        right: 1.5rem;
+        top: 1.5rem;
+    }
+    
+    .elpavo1 {
+        left: 6rem;
+        bottom: 2rem;
+        width: 6rem;
+        height: 8rem;
+        font-size: 2.5rem;
+    }
+    
+    .elpavo2 {
+        right: 20%;
+        top: 3rem;
+        width: 7rem;
+        height: 9rem;
+        font-size: 3rem;
+    }
+    
+    .erturno {
+        left: 10%;
+        font-size: 1.5rem;
+    }
+    
+    .botonataco {
+        right: 4rem;
+        bottom: 4rem;
+        padding: 0.7rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+    .botones-adicionales {
+        bottom: 0.5rem;
+        left: 0.5rem;
+        gap: 0.5rem;
+    }
+    
+    .boton-secundario {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}

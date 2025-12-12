@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena de Batalla - Fear & Hunger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./estilazo/batalla.css">
+</head>
+<body>
+    <div class="labatalla">
+        <!-- Barra de vida Jugador 2 -->
+        <div class="barritadevida2">
+            <div class="aquivalabarra">
+                <div class="vidajugador2" id="vidader2"></div>
+            </div>
+        </div>
+
+        <!-- Selector personajes Jugador 2 -->
+        <div class="paseleccionarperso2">
+            <div class="aquivanlascaritas2"></div>
+        </div>
+
+        <!-- Personaje Jugador 2 -->
+        <div class="elpavo2">
+            <img id="gifJugador2" alt="Personaje J2">
+        </div>
+
+        <!-- Texto de turno -->
+        <div class="erturno">Turno Jugador <span id="turnodeahora">1</span></div>
+
+        <!-- Botón de ataque -->
+        <button class="botonataco" id="botonAtacar">Atack</button>
+
+        <!-- Barra de vida Jugador 1 -->
+        <div class="barritadevida1">
+            <div class="aquivalabarra">
+                <div class="vidajugador1" id="vidader1" style="width: 100%;"></div>
+            </div>
+        </div>
+
+        <!-- Selector personajes Jugador 1 -->
+        <div class="paseleccionarperso1">
+            <div class="aquivanlascaritas1"></div>
+        </div>
+
+        <!-- Personaje Jugador 1 -->
+        <div class="elpavo1">
+            <img id="imgJugador1" alt="Personaje J1">
+        </div>
+
+        <div class="botones-adicionales">
+            <button id="botonVolver" class="boton-secundario">Volver al Menú</button>
+            <button id="botonReiniciar" class="boton-secundario">Reiniciar</button>
+        </div>
+    </div>
+
+    <script src="funcionazas/batalla.js"></script>
+</body>
+</html>

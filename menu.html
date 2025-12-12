@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fear & Hunger Battle Arena</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilazo/estilos.css">
+</head>
+<body>
+    <div class="paginaentera">
+        <div class="titulacillo">
+            <h1>Fear & Hunger Battle Arena</h1>
+        </div>
+        
+        <div class="botonesarriba">
+            <div class="botonsuperior activo" id="botonjugador">
+                <span class="numerogrande">1</span>
+                <span class="textopequeno">Player</span>
+            </div>
+            
+            <div class="separatejoe"></div>
+            
+            <div class="botonsuperior" id="botonpvp">
+                <span class="textogrande">PvP</span>
+            </div>
+        </div>
+        
+        <div class="pedazo_cajotedelmenu">
+            <h2 class="titulocajon">Selecciona tus personajes (3 máximo)</h2>
+            
+            <div class="dondevaerboton" id="dondevaerboton">
+                <button class="butonazojugador2" id="butonazojugador2">Selección Jugador 2</button>
+            </div>
+
+            <div class="personajescontodo" id="contenedordepersonajes">
+                <div class="personajeguapo" data-indice="0">
+                    <img src=".././resources/character_menu/cahara.png" alt="Cahara" class="fotodepersonaje">
+                    <div class="bordepersonaje"></div>
+                    <div class="marcadordeseleccion">✓</div>
+                    <div class="marcadordeseleccionjugador2">2</div>
+                    <div class="nombrepersonaje">Cahara</div>
+                </div>
+                
+                <div class="personajeguapo" data-indice="1">
+                    <img src=".././resources/character_menu/dearce.png" alt="D'arce" class="fotodepersonaje">
+                    <div class="bordepersonaje"></div>
+                    <div class="marcadordeseleccion">✓</div>
+                    <div class="marcadordeseleccionjugador2">2</div>
+                    <div class="nombrepersonaje">D'arce</div>
+                </div>
+                
+                <div class="personajeguapo" data-indice="2">
+                    <img src=".././resources/character_menu/enki.png" alt="Enki" class="fotodepersonaje">
+                    <div class="bordepersonaje"></div>
+                    <div class="marcadordeseleccion">✓</div>
+                    <div class="marcadordeseleccionjugador2">2</div>
+                    <div class="nombrepersonaje">Enki</div>
+                </div>
+                
+                <div class="personajeguapo" data-indice="3">
+                    <img src=".././resources/character_menu/legarde.png" alt="Le'garde" class="fotodepersonaje">
+                    <div class="bordepersonaje"></div>
+                    <div class="marcadordeseleccion">✓</div>
+                    <div class="marcadordeseleccionjugador2">2</div>
+                    <div class="nombrepersonaje">Le'garde</div>
+                </div>
+                
+                <div class="personajeguapo" data-indice="4">
+                    <img src=".././resources/character_menu/ragnvaldr.png" alt="Ragnvaldr" class="fotodepersonaje">
+                    <div class="bordepersonaje"></div>
+                    <div class="marcadordeseleccion">✓</div>
+                    <div class="marcadordeseleccionjugador2">2</div>
+                    <div class="nombrepersonaje">Ragnvaldr</div>
+                </div>
+            </div>
+            
+            <div class="contadormagico">
+                <span id="textocontador">Personajes seleccionados:</span> <span id="contadorpersonajes">0</span>/3
+            </div>
+            
+            <div class="mensajeimportante" id="mensajito">
+                ¡Debes seleccionar exactamente 3 personajes para continuar!
+            </div>
+        </div>
+        
+        <div class="botonesfinales">
+            <button class="botonazos" id="botoncomenzar">Comenzar Batalla</button>
+            <button class="botonazos" id="botonlimpiar">Limpiar Selección</button>
+        </div>
+    </div>
+
+    <script src="funcionazas/funciones.js"></script>
+</body>
+</html>
